@@ -10,7 +10,7 @@ def create_outputs(url, directory=os.getcwd()):
     try:
         os.mkdir(directory + "/" + folder_name)
     except FileExistsError:
-        print(f"Directory '{folder_name}' is already existing")
+        print(f"Page was placed at '{folder_name}'")
 
     site_path = os.path.join(directory, folder_name + "/")
     return folder_name, site_path
@@ -25,4 +25,4 @@ def download_page(url, directory=os.getcwd()):
         print(f"Page '{folder_name}' was downloaded here: {site_path}")
 
     except requests.exceptions.ConnectionError:
-        print(f"Something went wrong, check your URL")
+        print("Something went wrong, check your URL")
