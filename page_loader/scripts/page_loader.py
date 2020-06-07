@@ -12,11 +12,9 @@ args = parser.parse_args()
 def main():
     url = args.url
     if args.output is None:
-        folder_name, site_path = page.create_outputs(url)
+        page.download_page(url)
     else:
-        folder_name, site_path = page.create_outputs(url, args.output)
-
-    page.download_page(url, folder_name, site_path)
+        page.download_page(url, args.output)
 
 
 if __name__ == "__main__":
